@@ -1,0 +1,54 @@
+---
+title: "Pautas: Trabajo final de carrera"
+output: pdf_document
+fontsize: 11pt
+geometry: margin=1in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+El proyecto consiste en el estudio de un caso sugerido por los docentes o por los estudiantes (con el consentimiento previo de los docentes). La idea es que consista en una primer aproximación al análisis estadístico de datos. 
+
+
+===El Trabajo Final de Grado tendrá por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea la primera experiencia de aporte a la acumulación en la disciplina, la cual podrá incluir análisis empírico o una revisión bibliográfica. Se espera la producción de un texto de 50 páginas de extensión, que contenga una fundamentación del tema elegido; una somera revisión de antecedentes teóricos y empíricos; la descripción de la estrategia empírica adoptada o los métodos de inclusión/exclusión de textos si se trata de una revisión bibliográfica; presentación de los principales resultados; comentarios finales; y referencias bibliográficas.
+
+La realización del Trabajo Final de Grado se apoyará mediante un seminario de acompañamiento, que provea a los estudiantes las herramientas básicas para la elaboración del trabajo. En el mismo se realizarán revisiones y comentarios sobre avances parciales, de forma de colaborar en la ejecución del trabajo y lograr un documento consistente. El Final de Grado podrá realizarse en grupos de dos estudiantes (recomendado) o individualmente.====
+
+
+El proyecto tendrá una extensión máxima de 10 carillas en papel A4, y será realizado en grupos de 1 a 3 alumnos. El trabajo debe ser entregado en el sitio EVA del curso el día **Lunes 4 de Diciembre de 2017** (o antes), conteniendo los archivos necesarios para que sea completamente reproducible. El trabajo será presentado en clase ante los profesores y demás estudiantes durante la última semana de clases (6 y 8 de Diciembre).
+
+Pauta para evaluar los trabajos:
+
+- Formato (fecha entrega, extensión, trabajo reproducible usando Rmd)   
+- Escritura (sin errores gramaticales, ideas claramente descritas en párrafos )   
+- Estructura del documento, las secciones deben seguir un orden razonable    
+- Claridad: si entiendo el modelo, la interpretación y las conclusiones del trabajo.   
+- Tablas y figuras: deben tener toda la información necesaria para que se entienda  sin necesitar ir al texto del documento. Todas las figuras y tablas deben tener leyendas, títulos y subtiítulos. El subtítulo (caption) debe contener el número de la figura o tabla así como una breve explicación de la información en la misma.  Adicionalmente en las figuras los nombre de los ejes tienen que ser informativos.
+
+El proyecto debe ser completamente reproducible, los archivos a adjuntar en EVA son:
+
+- archivo Rmd (que contenga el coódigo R y texto)
+- archivo pdf 
+- y otros archivos utilizados necesarios para reproducir el trabajo, (ejemplo archivo de datos)
+
+
+
+En lo que sigue, propongo una posible forma de estructurar el proyecto, no es obligatorio usarla. 
+
+## Introducción
+Introducir el problema de estudio, presentar el problema científico de interés. 
+
+## Datos
+Descripción general de los datos (la fuente, tipo de variables, dimensiones de los datos). Se puede incluir algún gráfico o tabla presentando algún detalle relevante de los datos (exploración de los datos ). 
+
+## Métodos
+Presentar el modelo que se va a utilizar para responder las preguntas. Incluye los parámetros, cómo se va a estimar el modelo, cómo se va a monitorear la (falta de) convergencia. 
+
+## Resultados
+Presentar un resumen de los resultados de aplicar el modelo descrito en *Métodos* sobre el conjunto de datos descrito en *Datos* para responder las preguntas o problemas planteados en la *Introducción*. 
+
+Antes de presentar los resultados del modelo, describe un detalle de MCMC, es decir, la cantidad de cadenas y el warm-up utilizados, así como una evaluación de la convergencia. Luego, resume la distribución posterior de los parámetros mediante histogramas de la posterior, o dibujos con intervalos de credibilidad para cada parámetro o también con tablas que tengan una estimación puntual y una por intervalos de los parámetros relevantes. Ademas, debemos agregar que respuestas tenemos de las preguntas de interés. 
+
+## Discusión o concluciones
+Esta sección presenta un breve resumen del trabajo, y podemos agregar posible problemas de los datos o el modelo utilizado, sugerencias de como se pueden mejorar dichos problemas. 
