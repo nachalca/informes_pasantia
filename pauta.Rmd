@@ -1,54 +1,113 @@
 ---
-title: "Pautas: Trabajo final de carrera"
+title: "Trabajo final de grado"
 output: pdf_document
-fontsize: 11pt
-geometry: margin=1in
+fontsize: 12pt
+geometry: margin=4cm
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+<!-- 
 El proyecto consiste en el estudio de un caso sugerido por los docentes o por los estudiantes (con el consentimiento previo de los docentes). La idea es que consista en una primer aproximación al análisis estadístico de datos. 
+-->
 
+\section{Introducción}
+El Trabajo Final de Grado (TFG) tiene por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea una primer experiencia de aporte a la acumulación en la disciplina. 
 
-===El Trabajo Final de Grado tendrá por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea la primera experiencia de aporte a la acumulación en la disciplina, la cual podrá incluir análisis empírico o una revisión bibliográfica. Se espera la producción de un texto de 50 páginas de extensión, que contenga una fundamentación del tema elegido; una somera revisión de antecedentes teóricos y empíricos; la descripción de la estrategia empírica adoptada o los métodos de inclusión/exclusión de textos si se trata de una revisión bibliográfica; presentación de los principales resultados; comentarios finales; y referencias bibliográficas.
+\section{Aspectos generales}
+La realización del TFG debe ser guiada por un docente tutor designado a tal fin. Es necesaria la elaboración de un proyecto de TFG, indicando el tema elegido, el docente tutor y los estudiantes. El proyecto de TFG es presentado en la comisión de carrera de la Licenciatura en Estadística para su aprobación. Una vez aprobado el proyecto se espera que los estudiantes finalicen el TFG durante los siguientes 6 meses, asimismo es deseable que todo el proceso (incluyendo la realización del proyecto) no dure mas de 1 tamaño. El Final de Grado podrá realizarse en grupos de dos estudiantes (recomendado) o individualmente.
 
-La realización del Trabajo Final de Grado se apoyará mediante un seminario de acompañamiento, que provea a los estudiantes las herramientas básicas para la elaboración del trabajo. En el mismo se realizarán revisiones y comentarios sobre avances parciales, de forma de colaborar en la ejecución del trabajo y lograr un documento consistente. El Final de Grado podrá realizarse en grupos de dos estudiantes (recomendado) o individualmente.====
+El resultado final consiste en un texto de aproximadamente 50 páginas de extensión, que contenga la presentación y  justificación del tema elegido; la descripción de los métodos estadísticos con los que se va a trabajar; presentación de los principales resultados; comentarios finales; y referencias bibliográficas. Es deseable que el TFG sea reproducible, es decir, ademas de las copias impresas del documento, los estudiantes produzcan los archivos necesarios para su creación y los archivos con el código para ejecutar los métodos estadísticos. Se recomienda que estos archivos queden contenidos de forma que sean de acceso sencillo (por ejemplo en un repositorio Github). 
 
+\section{Aspectos de Formato}
+Aquí se describen algunos aspectos deseables del formato del TFG.
 
-El proyecto tendrá una extensión máxima de 10 carillas en papel A4, y será realizado en grupos de 1 a 3 alumnos. El trabajo debe ser entregado en el sitio EVA del curso el día **Lunes 4 de Diciembre de 2017** (o antes), conteniendo los archivos necesarios para que sea completamente reproducible. El trabajo será presentado en clase ante los profesores y demás estudiantes durante la última semana de clases (6 y 8 de Diciembre).
-
-Pauta para evaluar los trabajos:
-
-- Formato (fecha entrega, extensión, trabajo reproducible usando Rmd)   
-- Escritura (sin errores gramaticales, ideas claramente descritas en párrafos )   
-- Estructura del documento, las secciones deben seguir un orden razonable    
-- Claridad: si entiendo el modelo, la interpretación y las conclusiones del trabajo.   
+- Proyecto reproducible. Es deseable contar con los archivos fuente para reproducir el documento final (archivos .tex, .Rnw, .Rmd), los códigos necesarios los resultados (archivos .R) documentados para que puedan leerse y los archivos conteniendo los datos utilizados.      
+- Escritura. El documento debe leerse en forma fluida, donde cada párrafo represente una idea a transmitir. Se debe perseguir la claridad a lo largo del documento, transmitir el problema de estudio, el modelo estadístico, la interpretación y conclusiones del trabajo.     
+- Estructura del documento, las secciones deben seguir un orden razonable, que permitan leer el documento forma ordenada.    
 - Tablas y figuras: deben tener toda la información necesaria para que se entienda  sin necesitar ir al texto del documento. Todas las figuras y tablas deben tener leyendas, títulos y subtiítulos. El subtítulo (caption) debe contener el número de la figura o tabla así como una breve explicación de la información en la misma.  Adicionalmente en las figuras los nombre de los ejes tienen que ser informativos.
 
-El proyecto debe ser completamente reproducible, los archivos a adjuntar en EVA son:
-
-- archivo Rmd (que contenga el coódigo R y texto)
-- archivo pdf 
-- y otros archivos utilizados necesarios para reproducir el trabajo, (ejemplo archivo de datos)
 
 
+\section{Modalidades}
+Para describir que se espera en un TFG de manera mas concreta se proponen 3 modalidades o tipolog\'ias de trabajo. Estas modalidades **no** representan un requisito o categoría formal para el TFG pero pueden servir como guía para los estudiantes. 
 
-En lo que sigue, propongo una posible forma de estructurar el proyecto, no es obligatorio usarla. 
+Una primer modalidad de TFG es *Analisis de Datos*, a partir de un problema concreto y con datos reales se propone una solución al problema o pregunta de interés mediante un modelo estadístico. El centro de este tipo de TFG es la relación entre la pregunta o problema a responder (y por ende los datos utilizados) y la herramienta estadística que se propone para responderlo. En lo que sigue, propongo una posible forma de estructurar el proyecto, no es obligatorio usarla. 
 
-## Introducción
-Introducir el problema de estudio, presentar el problema científico de interés. 
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+library(tidyverse); library(knitr); library(kableExtra)
 
-## Datos
-Descripción general de los datos (la fuente, tipo de variables, dimensiones de los datos). Se puede incluir algún gráfico o tabla presentando algún detalle relevante de los datos (exploración de los datos ). 
+tema <- c('Introducción','Datos', 'Métodos', 'Resultados', 'Discusión')
 
-## Métodos
-Presentar el modelo que se va a utilizar para responder las preguntas. Incluye los parámetros, cómo se va a estimar el modelo, cómo se va a monitorear la (falta de) convergencia. 
+descri <- c('Introducir el problema de estudio, presentar el problema científico de interés.' , 
+'Descripción general de los datos (la fuente, tipo de variables, dimensiones de los datos). Se puede incluir algún gráfico o tabla presentando algún detalle relevante de los datos (exploración de los datos ).',
+'Presentar el modelo que se va a utilizar para responder las preguntas. Incluye los parámetros, cómo se va a estimar el modelo, cómo se va a monitorear la (falta de) convergencia.', 
+'Presentar un resumen de los resultados de aplicar el modelo descrito en Métodos sobre el conjunto de datos descrito en Datos para responder las preguntas o problemas planteados en la Introducción.', 
+'Esta sección presenta un breve resumen del trabajo, y podemos agregar posible problemas de los datos o el modelo utilizado, sugerencias de como se pueden mejorar dichos problemas.') 
 
-## Resultados
-Presentar un resumen de los resultados de aplicar el modelo descrito en *Métodos* sobre el conjunto de datos descrito en *Datos* para responder las preguntas o problemas planteados en la *Introducción*. 
+data_frame(Tema = tema, Descripcion = descri) %>%
+  kable('latex', caption = 'Modalidad Análisis de datos: estructura de documento' ) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, italic = T, border_right = T) %>%
+  column_spec(2, width = "12cm")
+```
 
-Antes de presentar los resultados del modelo, describe un detalle de MCMC, es decir, la cantidad de cadenas y el warm-up utilizados, así como una evaluación de la convergencia. Luego, resume la distribución posterior de los parámetros mediante histogramas de la posterior, o dibujos con intervalos de credibilidad para cada parámetro o también con tablas que tengan una estimación puntual y una por intervalos de los parámetros relevantes. Ademas, debemos agregar que respuestas tenemos de las preguntas de interés. 
 
-## Discusión o concluciones
-Esta sección presenta un breve resumen del trabajo, y podemos agregar posible problemas de los datos o el modelo utilizado, sugerencias de como se pueden mejorar dichos problemas. 
+La segunda modalidad de TFG que se describe aquí es *Revision de tecnicas*, se identifica un problema estadístico relevante y se resenan algunos métodos estadísticos para atacarlo, comparando su performance en datos simulados y reales. El centro de este tipo de TFG es la comparación de varias metodologías estadísticas para resolver un problema dado. Si bien es deseable que utilice un conjunto de datos reales para comparar los métodos, los datos no juegan un papel tan importante como en la modalidad anterior. 
+
+
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+tema <- c('Introducción', 'Métodos', 'Simulaciones', 'Resultados en datos reales', 'Discusión')
+
+descri <- c('Introducir el problema estadístico de interés y una visión global de los métodos para resolverlo', 
+'Descripción de las técnicas a ser comparadas, justificando su elección',
+'Realizar un experimento de simulación, explicitar que aspectos se van a contrastar y describir los resultados obtenidos', 
+'Presentar un conjunto de datos reales y los resultados de aplicar cada una de las técnicas a los mismos.', 
+'Esta sección presenta un breve resumen del trabajo, explicitando fortalezas y debilidades de las técnicas comparadas y sugerencias de como se puede mejorar o ampliar la comparación.') 
+
+data_frame(Tema = tema, Descripcion = descri) %>%
+  kable('latex', caption = 'Modalidad Revision de técnicas: estructura de documento' ) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, italic = T, border_right = T) %>%
+  column_spec(2, width = "10cm")
+```
+
+Finalmente, una tercer modalidad de TFG es *Tecnologica*, lo que distingue esta modalidad es la producción de un producto final distinto al documento escrito. Este producto podría consistir por ejemplo en la realización de un paquete en *R* que implemente algún metido estadístico, o el desarrollo de una aplicación web (mediante Shiny ) que permita la exploración interactiva de un conjunto de datos. El centro de este tipo de TFG es el producto que se propone y su correspondiente documentación. 
+
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+tema <- c('Introducción', 'Descripcion del producto', 'Ejemplo de aplicacion', 'Discusión')
+
+descri <- c('Introducir el producto a desarrollar, justificando su utilidad', 
+'Descripción las principales características del producto, a que usuarios esta dirigido y como se espera que sea utilizado',
+'Presentar un conjunto de datos reales y ejemplificar el uso del producto desarrollado en los mismos.', 
+'Esta sección presenta un breve resumen del trabajo, explicitando fortalezas y debilidades del producto y sugerencias de como este puede ser mejorado.') 
+
+data_frame(Tema = tema, Descripcion = descri) %>%
+  kable('latex', caption = 'Modalidad Tecnologica: estructura de documento' ) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, italic = T, border_right = T) %>%
+  column_spec(2, width = "10cm")
+```
+
+
+
+
+
+<!-- ## Introducción -->
+<!-- Introducir el problema de estudio, presentar el problema científico de interés.  -->
+
+<!-- ## Datos -->
+<!-- Descripción general de los datos (la fuente, tipo de variables, dimensiones de los datos). Se puede incluir algún gráfico o tabla presentando algún detalle relevante de los datos (exploración de los datos ).  -->
+
+<!-- ## Métodos -->
+<!-- Presentar el modelo que se va a utilizar para responder las preguntas. Incluye los parámetros, cómo se va a estimar el modelo, cómo se va a monitorear la (falta de) convergencia.  -->
+
+<!-- ## Resultados -->
+<!-- Presentar un resumen de los resultados de aplicar el modelo descrito en *Métodos* sobre el conjunto de datos descrito en *Datos* para responder las preguntas o problemas planteados en la *Introducción*.  -->
+
+<!-- Antes de presentar los resultados del modelo, describe un detalle de MCMC, es decir, la cantidad de cadenas y el warm-up utilizados, así como una evaluación de la convergencia. Luego, resume la distribución posterior de los parámetros mediante histogramas de la posterior, o dibujos con intervalos de credibilidad para cada parámetro o también con tablas que tengan una estimación puntual y una por intervalos de los parámetros relevantes. Ademas, debemos agregar que respuestas tenemos de las preguntas de interés.  -->
+
+<!-- ## Discusión o concluciones -->
+<!-- Esta sección presenta un breve resumen del trabajo, y podemos agregar posible problemas de los datos o el modelo utilizado, sugerencias de como se pueden mejorar dichos problemas.  -->
