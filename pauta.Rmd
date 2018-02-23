@@ -14,9 +14,6 @@ El proyecto consiste en el estudio de un caso sugerido por los docentes o por lo
 -->
 
 \section{Introducción}
-El proyecto consiste en el estudio de un caso sugerido por los docentes o por los estudiantes (con el consentimiento previo de los docentes). La idea es que consista en una primer aproximación al análisis estadístico de datos. 
-
-
 El Trabajo Final de Grado (TFG) tiene por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea una primer experiencia que aporte al conocimiento en la disciplina. 
 
 \section{Aspectos generales}
