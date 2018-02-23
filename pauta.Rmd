@@ -15,6 +15,7 @@ El proyecto consiste en el estudio de un caso sugerido por los docentes o por lo
 
 \section{Introducción}
 El Trabajo Final de Grado (TFG) tiene por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea una primer experiencia que aporte al conocimiento en la disciplina. 
+once again playing with little changes...
 
 \section{Aspectos generales}
 La realización del TFG debe ser guiado por un docente tutor designado a tal fin. Es necesaria la elaboración de un proyecto de TFG, indicando el tema elegido, el docente tutor y los estudiantes. El proyecto de TFG es presentado en la comisión de carrera de la Licenciatura en Estadística para su aprobación. Una vez aprobado el proyecto se espera que los estudiantes finalicen el TFG durante los siguientes 6 meses, asimismo es deseable que todo el proceso (incluyendo la realización del proyecto) no dure más de 1 año. El Final de Grado podrá realizarse en grupos de dos estudiantes (recomendado) o individualmente.
