@@ -14,12 +14,12 @@ El proyecto consiste en el estudio de un caso sugerido por los docentes o por lo
 -->
 
 \section{Introducción}
-El Trabajo Final de Grado (TFG) tiene por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea una primer experiencia de aporte a la acumulación de conocimiento en la disciplina. 
+El Trabajo Final de Grado (TFG) tiene por objetivo familiarizar a los estudiantes con los desafíos que implica preparar un trabajo escrito bien estructurado y consistente. Se busca que sea una primer experiencia que aporte al conocimiento en la disciplina. 
 
 \section{Aspectos generales}
 La realización del TFG debe ser guiado por un docente tutor designado a tal fin. Es necesaria la elaboración de un proyecto de TFG, indicando el tema elegido, el docente tutor y los estudiantes. El proyecto de TFG es presentado en la comisión de carrera de la Licenciatura en Estadística para su aprobación. Una vez aprobado el proyecto se espera que los estudiantes finalicen el TFG durante los siguientes 6 meses, asimismo es deseable que todo el proceso (incluyendo la realización del proyecto) no dure más de 1 año. El Final de Grado podrá realizarse en grupos de dos estudiantes (recomendado) o individualmente.
 
-El resultado final consiste en un texto de aproximadamente 50 páginas de extensión, que contenga la presentación y  justificación del tema elegido; la descripción de los métodos estadísticos con los que se va a trabajar; presentación de los principales resultados; comentarios finales; y referencias bibliográficas. Se recomienda que el TFG sea reproducible, es decir, además de las copias impresas del documento, los estudiantes produzcan los archivos necesarios para la creación del documento final. Esto implica brindar los datos y los archivos con el código para completamente reproducir los resultados y que el TFG pueda ser base para otras investigaciones.
+El resultado final consiste en un texto de aproximadamente 50 páginas de extensión, que contenga la presentación y  justificación del tema elegido; la descripción de los métodos estadísticos con los que se va a trabajar; presentación de los principales resultados; comentarios finales; y referencias bibliográficas. Se recomienda que el TFG sea reproducible, es decir, además de las copias impresas del documento, los estudiantes produzcan los archivos necesarios para la creación del documento final. Esto implica brindar los datos y los archivos con el código que permitan reproducir completamente los resultados.
 Se recomienda que estos archivos queden contenidos de forma que sean de acceso sencillo (por ejemplo en un repositorio Github). 
 
 
@@ -37,9 +37,13 @@ Aquí se describen algunos aspectos deseables del formato del TFG.
 
 
 \section{Modalidades}
-Para describir que se espera en un TFG de manera más concreta se proponen 3 modalidades o tipolog\'ias de trabajo. Estas modalidades **no** representan un requisito o categoría formal para el TFG pero pueden servir como guía para los estudiantes. 
+Para describir que se espera en un TFG de manera más concreta se proponen 3 modalidades o tipologías de trabajo. Estas modalidades **no** representan un requisito o categoría formal para el TFG pero pueden servir como guía para los estudiantes. 
 
-  Una primer modalidad de TFG es *Analisis de Datos*, a partir de un problema concreto y con datos reales se propone una solución a un problema o pregunta de interés mediante un modelo estadístico. El centro de este tipo de TFG es la relación entre la pregunta o problema a responder (y por ende los datos utilizados) y la herramienta estadística que se propone para responderlo. En la Tabla \ref{data}, se propone una posible forma de estructurar el documento en la modalidad de análisis de datos. 
+ \begin{enumerate}
+ 
+ \item Analisis de Datos
+ 
+ A partir de un problema concreto y con datos reales se propone una solución a un problema o pregunta de interés mediante un modelo estadístico. El centro de este tipo de TFG es la relación entre problema o la pregunta o a responder (y por ende los datos utilizados) y la herramienta estadística que se propone para responderlo. En la Tabla \ref{data}, se propone una posible forma de estructurar el documento en la modalidad de análisis de datos. 
 
 ```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
 library(tidyverse); library(knitr); library(kableExtra)
@@ -50,9 +54,9 @@ descri <- c('Introducir el problema de estudio, presentar el problema científic
 'Descripción general de los datos (la fuente, tipo de variables, dimensiones de los datos). Se sugiere incluir gráficos presentando algún detalle relevante de los datos (exploración de los datos ).',
 'Presentar el modelo que se va a utilizar para responder las preguntas. Incluye los parámetros, cómo se va a estimar el modelo, cómo se va a diagnosticar el mismo.', 
 'Presentar un resumen de los resultados de aplicar el modelo descrito en Métodos sobre el conjunto de datos descrito en Datos para responder las preguntas o problemas planteados en la Introducción. Es importante interpretar los resultados del modelo en términos del problema de interés', 
-'Esta sección presenta un breve resumen del trabajo, y podemos agregar posible problemas de los datos o el modelo utilizado, sugerencias de como se pueden mejorar dichos problemas.') 
+'Esta sección presenta un breve resumen del trabajo. Puede incluir posible problemas de los datos o el modelo utilizado sugerencias de como se pueden mejorar dichos problemas.') 
 
-data_frame(Tema = tema, Descripcion = descri) %>%
+data_frame(Tema = tema, Descripción = descri) %>%
   kable('latex', caption = '\\label{data} Modalidad Análisis de datos: estructura de documento' ) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, italic = T, border_right = T) %>%
@@ -60,7 +64,9 @@ data_frame(Tema = tema, Descripcion = descri) %>%
 ```
 
 
-La segunda modalidad de TFG que se describe aquí es *Revision de técnicas*, se identifica un problema estadístico relevante y se reseñan algunos métodos estadísticos para atacarlo, comparando su performance en datos simulados y reales. El centro de este tipo de TFG es la comparación de varias metodologías estadísticas para resolver un problema dado. Si bien es deseable que utilice un conjunto de datos reales para comparar los métodos, los datos no juegan un papel tan importante como en la modalidad anterior. Podrían utilizarce datos simulados o de repositorios ampliamente utilizados. 
+\item Revision de técnicas
+
+Se identifica un problema estadístico relevante y se reseñan algunos métodos estadísticos para atacarlo, comparando su performance en datos simulados y reales. El centro de este tipo de TFG es la comparación de varias metodologías estadísticas para resolver un problema dado. Si bien es deseable que utilice un conjunto de datos reales para comparar los métodos, los datos no juegan un papel tan importante como en la modalidad anterior. Podrían utilizarce datos simulados o disponibles en repositorios ampliamente utilizados. 
 En la Tabla \ref{tecnica} se presenta la estructura sugerida para el documento de la modalidad revisioón de técnicas.
 
 ```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
@@ -72,14 +78,16 @@ descri <- c('Introducir el problema estadístico de interés y una visión globa
 'Presentar un conjunto de datos reales y los resultados de aplicar cada una de las técnicas a los mismos.', 
 'Esta sección presenta un breve resumen del trabajo, explicitando fortalezas y debilidades de las técnicas comparadas y sugerencias de como se puede mejorar o ampliar la comparación.') 
 
-data_frame(Tema = tema, Descripcion = descri) %>%
+data_frame(Tema = tema, Descripción = descri) %>%
   kable('latex', caption = '\\label{tecnica} Modalidad Revision de técnicas: estructura de documento' ) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, italic = T, border_right = T) %>%
   column_spec(2, width = "10cm")
 ```
 
-Finalmente, una tercer modalidad de TFG es *Tecnológica*, lo que distingue esta modalidad es la producción de un producto final distinto al documento escrito. Este producto podría consistir por ejemplo en la realización de un paquete en *R* que implemente algún método estadístico, o el desarrollo de una aplicación web (mediante Shiny ) que permita la exploración interactiva de un conjunto de datos de interés ó elaboración de herramientas para generar y actualizar datos de forma automática a nivel Nacional. El centro de este tipo de TFG es el producto que se propone y su correspondiente documentación. 
+\item  Tecnológica
+
+Lo que distingue esta modalidad es la producción de un producto final distinto al documento escrito. Este producto podría consistir por ejemplo en la realización de un paquete en *R* que implemente algún método estadístico, o el desarrollo de una aplicación web (mediante Shiny ) que permita la exploración interactiva de un conjunto de datos de interés ó elaboración de herramientas para generar y actualizar datos de forma automática a nivel Nacional. El centro de este tipo de TFG es el producto que se propone y su correspondiente documentación. 
 
 En la Tabla \ref{tec} se presenta una estructura sugerida para el documento de la modalidad tecnológica.
 
@@ -91,7 +99,7 @@ descri <- c('Introducir el producto a desarrollar, justificando su utilidad',
 'Presentar un conjunto de datos reales y ejemplificar el uso del producto desarrollado en los mismos.', 
 'Esta sección presenta un breve resumen del trabajo, explicitando fortalezas y debilidades del producto y sugerencias de cómo este puede ser mejorado.') 
 
-data_frame(Tema = tema, Descripcion = descri) %>%
+data_frame(Tema = tema, Descripción = descri) %>%
   kable('latex', caption = '\\label{tec} Modalidad Tecnológica: estructura de documento' ) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, italic = T, border_right = T) %>%
@@ -99,7 +107,7 @@ data_frame(Tema = tema, Descripcion = descri) %>%
 ```
 
 
-
+\end{enumerate}
 
 
 <!-- ## Introducción -->
